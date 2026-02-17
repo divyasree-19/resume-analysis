@@ -1,1 +1,2 @@
 -> used pure django 
+-> ollama
