@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Upload</title>
+</head>
+<body>
+    <h2>Upload Resume</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+
+    {% if text %}
+        <h3>Extracted Text:</h3>
+        <pre>{{ text }}</pre>
+    {% endif %}
+
+    {% if ai_response %}
+    <h3>AI Analysis:</h3>
+    <pre>{{ ai_response }}</pre>
+{% endif %}
+</body>
+</html>
